@@ -20,8 +20,6 @@
 
 </div>
 
-> skill 的规则文件（`SKILL.md`、`references/`、`task_sheets/`）用英文写成。大纲可以是任何语言，论文正文一律是英文；交审说明和批注页界面跟你和 agent 对话的语言走。
-
 ## 功能
 
 ### 由什么组成
@@ -92,6 +90,26 @@ Agent 先问这一节“写之前要定的事”，再审大纲逻辑，把问�
 
 ### 目录
 
+**skill 的目录**：装好后在 `~/.claude/skills/outline-to-paper/`（或项目的 `.claude/skills/` 下），agent 从这里读规则和模板，你一般不用改。
+
+```text
+outline-to-paper/
+├── SKILL.md                       # 入口：agent 每次先读，写着每一步怎么做
+├── references/
+│   ├── logic/                     # 写作逻辑：每节写什么、按什么顺序，审大纲逻辑的判据，跨节对应关系
+│   └── requirements/              # 写作要求（通用）：默认约束、可选预设、方法论公式、句式库
+│       ├── ml-paper-writing/      # 学术表达要求，第三方 skill 原样收录（MIT 许可）
+│       └── per_paper/             # 写作要求（本文专用）的模板：项目约束、全文词汇表、章节词汇对照表、脚本检查词表
+├── task_sheets/                   # 派给子 agent 的任务书模板：审大纲逻辑、写手补充清单、写手、改稿方
+├── scripts/
+│   ├── check_draft.py             # 检查脚本：扫出能用脚本查的问题
+│   └── review/                    # 本地批注页，含中英界面语言表和配置样例
+├── assets/                        # README 的头图
+└── config.local.json.example      # 本机配置样例，复制改名为 config.local.json 后填
+```
+
+**你的项目里的目录**：写论文的过程中产生，稿子、批注和定稿都在这里，位置可以在配置里改。
+
 ```text
 <项目>/
 ├── writing/                   # 本文专用要求（rules_dir）：项目约束、全文词汇表、脚本检查词表
@@ -100,7 +118,7 @@ Agent 先问这一节“写之前要定的事”，再审大纲逻辑，把问�
 └── writing_work/<节名>/       # 过程材料：大纲副本、引用表、任务书、子 agent 的产出（work_dir），不用你审
 ```
 
-目录都可以在配置里改。各步的规定见 [`SKILL.md`](SKILL.md)，写作逻辑见 [`references/logic/`](references/logic/)，写作要求见 [`references/requirements/`](references/requirements/)。
+各步的规定见 [`SKILL.md`](SKILL.md)，写作逻辑见 [`references/logic/`](references/logic/)，写作要求见 [`references/requirements/`](references/requirements/)。
 
 ## 安装
 

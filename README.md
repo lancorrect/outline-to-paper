@@ -20,8 +20,6 @@
 
 </div>
 
-> The rule files of the skill (`SKILL.md`, `references/`, `task_sheets/`) are written in English. The outline may be in any language; the paper is always written in English. Review notes and the annotation page follow the language you use with the agent.
-
 ## Features
 
 ### What it consists of
@@ -92,6 +90,26 @@ Write the next section from the outline: related work.
 
 ### Folders
 
+**The skill's folders**: after installation they are in `~/.claude/skills/outline-to-paper/` (or under `.claude/skills/` in your project). The agent reads the rules and templates from here; you normally do not need to change them.
+
+```text
+outline-to-paper/
+├── SKILL.md                       # entry point: the agent reads it first; says what to do at each step
+├── references/
+│   ├── logic/                     # writing logic: what each section says and in what order, outline audit criteria, cross-section correspondences
+│   └── requirements/              # writing requirements (general): default constraints, optional presets, method formulas, phrasebank
+│       ├── ml-paper-writing/      # academic style requirements, a third-party skill included unmodified (MIT License)
+│       └── per_paper/             # templates of the per-paper requirements: project constraints, glossary, section glossary, check-script word lists
+├── task_sheets/                   # task sheet templates for sub-agents: outline logic audit, writer supplement list, writer, reviser
+├── scripts/
+│   ├── check_draft.py             # check script: finds the problems a script can find
+│   └── review/                    # local annotation page, with English and Chinese interface tables and a config sample
+├── assets/                        # header images of the README
+└── config.local.json.example      # sample machine settings; copy it to config.local.json and fill it in
+```
+
+**Folders in your project**: created while you write the paper; drafts, annotations and finalized sections live here. Their locations can be changed in the configuration.
+
 ```text
 <project>/
 ├── writing/                   # per-paper requirements (rules_dir): project constraints, glossary, check-script word lists
@@ -100,7 +118,7 @@ Write the next section from the outline: related work.
 └── writing_work/<section>/    # process material: outline copy, reference table, task sheets, sub-agent output (work_dir); not for you to review
 ```
 
-All folders can be changed in the configuration. The rules of each step are in [`SKILL.md`](SKILL.md), the writing logic in [`references/logic/`](references/logic/), and the writing requirements in [`references/requirements/`](references/requirements/).
+The rules of each step are in [`SKILL.md`](SKILL.md), the writing logic in [`references/logic/`](references/logic/), and the writing requirements in [`references/requirements/`](references/requirements/).
 
 ## Installation
 
