@@ -1,0 +1,29 @@
+{
+  "draft": "writing/drafts/<<section>>_v<<N>>.md",
+  "base": "writing/drafts/<<section>>_v<<N-1>>.md",
+  "outline": "writing_work/<<section>>/outline.md",
+  "output": "writing/drafts/<<section>>_v<<N>>_review.json",
+  "lang": "<<en | zh | path to a language table>>",
+  "paragraphs": [
+    {"match": "<<opening text of a paragraph>>", "outline_lines": [12, 13]}
+  ],
+  "notes": [
+    {"match": "<<text inside a sentence>>", "kind": "change", "text": "<<Per your annotation: what changed.>>"},
+    {"match": "<<text inside a sentence>>", "kind": "question", "text": "<<What the user should decide, its basis, and what happens without a reply.>>"}
+  ],
+  "doc_notes": [
+    {"kind": "question", "text": "<<A matter across paragraphs for the user to decide; say what happens without a reply.>>"}
+  ],
+  "_help": {
+    "paths": "Paths are relative to --root of review_server.py. The folders follow the defaults of config.local.json; use your own drafts_dir and work_dir if you changed them.",
+    "draft": "This version of the draft.",
+    "base": "The previous version; with it, the page marks changes sentence by sentence. Delete this key for the first version.",
+    "outline": "The outline of this section; its lines are shown under the paragraphs they map to.",
+    "output": "Where the annotations are saved. On submit a readable .md with the same name is written too.",
+    "lang": "Language of the page: the language of the session. en, zh, or the path of a language table written at step 0 for another language.",
+    "paragraphs": "One entry per paragraph. match is the opening text of the paragraph, long enough to identify it uniquely; outline_lines are the outline line numbers it maps to.",
+    "notes": "Notes shown next to sentences. match is a substring of one sentence, matched against the plain text with ** and citation brackets removed. kind is change (what changed), question (something for the user to decide) or style (a style hint). Every question states its basis and what happens if the user does not reply. Write notes in the language of the session.",
+    "doc_notes": "Notes on the whole document, each with kind and text.",
+    "rich_layout": "Optional key. Set it to true for structured drafts with several heading levels, lists and tables, such as research summaries or plans: headings, lists and tables are laid out, tables are split into sentences cell by cell and can still be annotated sentence by sentence. Leave it out for section drafts and for drafts already under review, or paragraph IDs change and earlier annotations no longer match."
+  }
+}

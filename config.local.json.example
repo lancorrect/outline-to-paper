@@ -1,0 +1,24 @@
+{
+  "rules_dir": "writing",
+  "drafts_dir": "writing/drafts",
+  "final_dir": "writing/final",
+  "work_dir": "writing_work",
+  "corpus_dir": "",
+  "paper_dirs": [],
+  "code_dir": "",
+  "subagent_launcher": "",
+  "writer_model": "",
+  "reviser_model": "",
+  "_help": {
+    "rules_dir": "Where this paper's project_constraints.md, glossary.md and check_rules.json live. Relative paths are relative to the project the agent runs in.",
+    "drafts_dir": "Every version handed to the user for review, with its review config and the user's annotations.",
+    "final_dir": "Finalized sections.",
+    "work_dir": "Process material for sub-agents: task sheets, outline copies, their drafts and notes. Not for the user to review.",
+    "corpus_dir": "Optional. A folder of published papers in your field, used to look up how others phrase a sentence, for example a research question. Leave empty if you have none.",
+    "paper_dirs": "Local folders of papers that may be searched when auditing the outline logic and listing what the writer needs to add. All of them are searched; nothing is fetched online.",
+    "code_dir": "Optional. The implementation code, read only, used to check that the outline matches what was implemented. Leave empty if there is none.",
+    "subagent_launcher": "How sub-agents are started on this machine, in your own words or as a command: a terminal command, another skill, or the sub-agents built into the harness.",
+    "writer_model": "The writer sub-agent's model. Tested: GPT through Codex.",
+    "reviser_model": "The reviser sub-agent's model. Tested: Claude. The writer and the reviser must run in separate sessions."
+  }
+}

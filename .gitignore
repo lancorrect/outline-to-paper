@@ -1,0 +1,15 @@
+# Machine-specific settings: the only file that holds local paths. Never committed.
+config.local.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Drafts, reviews and working files belong to the paper project, not to the skill repository
+writing_work/
+*_review.json
+*_review.md
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,19 @@
+{
+  "_note": "<<Paper title>>: word lists for scripts/check_draft.py, created <<date>>.",
+  "presets": {"however": false, "american_spelling": false, "no_em_dash": false},
+  "proper_names_from_glossary": true,
+  "extra_proper_names": [],
+  "forbidden": [],
+  "hints": [],
+  "abbreviation_whitelist": [],
+  "_help": {
+    "presets": "Switches for the three presets the script checks; true means enabled. Keep them the same as section 2 of project_constraints.md.",
+    "proper_names_from_glossary": "true (default): proper names are read from the Proper names table of the glossary. Set it to false if the script cannot read your glossary, and list the names in extra_proper_names.",
+    "extra_proper_names": "Proper names to check that are not in the glossary; usually empty.",
+    "forbidden": "Forbidden forms; a hit is a must-fix. Each entry has pattern (a regular expression), why (an English note naming the rule and the glossary ID, for example \"T2 T03: write use, not utilize\") and optionally ignore_case (default true). Mirrors the Forbidden forms column of the glossary.",
+    "hints": "Words that are only hinted; read the sentence and decide. Same format as forbidden. For words that are usually wrong here but also have legitimate uses.",
+    "abbreviation_whitelist": "Abbreviations that need no spelling out; the L2 check skips them.",
+    "repeated_verbs": "Optional key. Ordinary verbs for the L10 hint, each with label and pattern; without it the script uses use and exceed.",
+    "glossary_names_heading, glossary_english_column": "Optional keys. Fill them only when the heading and the column of the glossary are not the default Proper names and English."
+  }
+}
