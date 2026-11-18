@@ -90,7 +90,7 @@ Agent 先问这一节“写之前要定的事”，再审大纲逻辑，把问�
 
 ### 目录
 
-**skill 的目录**：装好后在 `~/.claude/skills/outline-to-paper/`（或项目的 `.claude/skills/` 下），agent 从这里读规则和模板，你一般不用改。
+**skill 的目录**
 
 ```text
 outline-to-paper/

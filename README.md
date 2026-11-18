@@ -90,7 +90,7 @@ Write the next section from the outline: related work.
 
 ### Folders
 
-**The skill's folders**: after installation they are in `~/.claude/skills/outline-to-paper/` (or under `.claude/skills/` in your project). The agent reads the rules and templates from here; you normally do not need to change them.
+**The skill's folders**
 
 ```text
 outline-to-paper/
